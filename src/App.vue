@@ -36,7 +36,7 @@
   <div>
     <div>
       <div v-if="fileContent">
-        <GPASection :content="fileContent" />
+        <GPASection :content="parseCSV(fileContent)" />
       </div>
       <p v-else>ファイルを選択してください</p>
     </div>
@@ -48,6 +48,7 @@ import { defineComponent, ref } from "vue";
 
 import FileSelector from "./components/FileSelector.vue";
 import GPASection from "./components/GPASection.vue";
+import parseCSV from "./components/units/parseCSV";
 
 export default defineComponent({
   name: "App",
@@ -75,6 +76,7 @@ export default defineComponent({
       includeCurriculumToGPA,
       lastFourYears,
       fileContent,
+      parseCSV,
       updateFileContent,
     };
   },
@@ -88,3 +90,4 @@ export default defineComponent({
   }
 }
 </style>
+./components/units/parseCSV

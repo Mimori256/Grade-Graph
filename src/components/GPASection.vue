@@ -1,11 +1,18 @@
 <script lang="ts">
+import Course from "./types/Course";
+import calculateGPA from "./units/caluculateGPA";
 import { PropType, defineComponent } from "vue";
 
+// Props has the array of Course
 export default defineComponent({
   props: {
     content: {
-      type: String as PropType<string>,
+      type: Array as PropType<Course[]>,
+      required: true,
     },
+  },
+  methods: {
+    calculateGPA,
   },
 });
 </script>
@@ -13,7 +20,7 @@ export default defineComponent({
 <template>
   <!--Show the content of props-->
   <div>
-    <p>test</p>
-    <p>{{ content }}</p>
+    <p>あなたのGPA</p>
+    <p>{{ calculateGPA(content) }}</p>
   </div>
 </template>
