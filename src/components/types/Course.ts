@@ -1,7 +1,7 @@
 type Course = {
   id: string;
   name: string;
-  registrationYear: number;
+  registrationYear: string;
   units: number;
   grade: string;
 };

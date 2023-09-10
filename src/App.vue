@@ -36,7 +36,10 @@
   <div>
     <div>
       <div v-if="fileContent">
-        <GPASection :content="parseCSV(fileContent)" />
+        {{ store.commit("setCourses", parseCSV(fileContent)) }}
+        {{ store.commit("setYear", selected) }}
+        <GradeTable />
+        <GPASection />
       </div>
       <p v-else>ファイルを選択してください</p>
     </div>
@@ -45,14 +48,16 @@
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
+import { store } from "./store/index";
 
 import FileSelector from "./components/FileSelector.vue";
 import GPASection from "./components/GPASection.vue";
+import GradeTable from "./components/GradeTable.vue";
 import parseCSV from "./components/units/parseCSV";
 
 export default defineComponent({
   name: "App",
-  components: { FileSelector, GPASection },
+  components: { FileSelector, GPASection, GradeTable },
 
   setup() {
     const currentYear = new Date().getFullYear();
@@ -61,14 +66,13 @@ export default defineComponent({
       (_, i) => currentYear - i
     ).map((year) => year.toString());
     const fileContent = ref<string | null>(null);
+    const selected = ref("all");
+    const includeCurriculumToGraph = ref(true);
+    const includeCurriculumToGPA = ref(true);
 
     const updateFileContent = (content: string) => {
       fileContent.value = content;
     };
-
-    let selected = "all";
-    let includeCurriculumToGraph = true;
-    let includeCurriculumToGPA = true;
 
     return {
       selected,
@@ -78,6 +82,7 @@ export default defineComponent({
       fileContent,
       parseCSV,
       updateFileContent,
+      store,
     };
   },
 });
@@ -90,4 +95,3 @@ export default defineComponent({
   }
 }
 </style>
-./components/units/parseCSV

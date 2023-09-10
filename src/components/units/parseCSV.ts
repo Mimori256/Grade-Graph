@@ -24,7 +24,7 @@ const parseCSV = (csv: string): Course[] => {
     const course: Course = {
       id: courseId,
       name: courseName,
-      registrationYear: parseInt(registrationYear),
+      registrationYear: registrationYear,
       units: Number(units),
       grade: grade,
     };

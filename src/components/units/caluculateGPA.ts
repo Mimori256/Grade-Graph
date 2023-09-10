@@ -12,7 +12,13 @@ const isCountedToGPA = (course: Course) => {
   return Object.keys(gradePointMap).includes(course.grade);
 };
 
-const calculateGPA = (courses: Course[]) => {
+const calculateGPA = (courses: Course[], year: string) => {
+  if (year !== "all") {
+    courses = courses.filter((course) => {
+      return course.registrationYear === year;
+    });
+  }
+
   let totalUnits = 0;
   let totalGradePoints = 0;
   courses.forEach((course) => {

@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
+import { defineComponent, PropType, ref } from "vue";
 
 export default defineComponent({
   props: {
@@ -8,20 +8,21 @@ export default defineComponent({
     },
   },
 
-  data() {
-    return {};
-  },
-  methods: {
-    handleFileUpload(event: Event) {
+  setup(props, { emit }) {
+    const handleFileUpload = (event: Event) => {
       const selectedFile = (event.target as HTMLInputElement).files?.[0];
       if (selectedFile) {
         const reader = new FileReader();
         reader.onload = (e) => {
-          this.$emit("fileContentChange", e.target?.result as string);
+          emit("fileContentChange", e.target?.result as string);
         };
         reader.readAsText(selectedFile);
       }
-    },
+    };
+
+    return {
+      handleFileUpload,
+    };
   },
 });
 </script>
