@@ -1,0 +1,31 @@
+/*
+a-plus: red, a: orange, b: blue, c: yellow, d: green, p: pink, f: purple, nin: brown, ryu: gray;
+make it white-ish to make it easy to see
+*/
+.a-plus {
+  background-color: #ffcccc;
+}
+.a {
+  background-color: #ffddcc;
+}
+.b {
+  background-color: #ccccff;
+}
+.c {
+  background-color: #ffffcc;
+}
+.d {
+  background-color: #ccffcc;
+}
+.p {
+  background-color: #ffccff;
+}
+.f {
+  background-color: #ffccff;
+}
+.nin {
+  background-color: #ffddcc;
+}
+.ryu {
+  background-color: #cccccc;
+}

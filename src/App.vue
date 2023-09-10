@@ -29,11 +29,6 @@
     </label>
   </div>
   <div>
-    <p>{{ selected }}</p>
-    <p>{{ includeCurriculumToGPA }}</p>
-    <p>{{ includeCurriculumToGraph }}</p>
-  </div>
-  <div>
     <div>
       <div v-if="fileContent">
         {{ store.commit("setCourses", parseCSV(fileContent)) }}
