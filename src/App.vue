@@ -18,6 +18,7 @@
   <div v-else>
     <GradeTable />
     <GPASection />
+    <GradeGraph />
     <DeleteButton @button-click="deleteFile" />
   </div>
 </template>
@@ -34,7 +35,7 @@ import GradeTable from "./components/postUpload/GradeTable.vue";
 import parseCSV from "./components/units/parseCSV";
 import HelpNote from "./components/preUpload/HelpNote.vue";
 import DeleteButton from "./components/postUpload/DeleteButton.vue";
-
+import GradeGraph from "./components/postUpload/GradeGraph.vue";
 export default defineComponent({
   name: "App",
   components: {
@@ -45,6 +46,7 @@ export default defineComponent({
     GradeTable,
     HelpNote,
     DeleteButton,
+    GradeGraph,
   },
 
   setup() {

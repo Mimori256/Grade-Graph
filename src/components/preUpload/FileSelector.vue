@@ -14,7 +14,6 @@ export default defineComponent({
       if (selectedFile) {
         const reader = new FileReader();
         reader.onload = (e) => {
-          console.log("emit");
           emit("file-content-change", e.target?.result as string);
         };
         reader.readAsText(selectedFile);

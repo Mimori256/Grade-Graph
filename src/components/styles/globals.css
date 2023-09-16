@@ -2,30 +2,26 @@ body {
   background-color: #eee;
 }
 
-/*
-a-plus: red, a: orange, b: blue, c: yellow, d: green, p: pink, f: purple, nin: brown, ryu: gray;
-make it white-ish to make it easy to see
-*/
 .a-plus {
-  background-color: #ffcccc;
+  background-color: #ff9999;
 }
 .a {
-  background-color: #ffddcc;
+  background-color: #ffcc99;
 }
 .b {
-  background-color: #ccccff;
+  background-color: #99ccff;
 }
 .c {
-  background-color: #ffffcc;
+  background-color: #ffff99;
 }
 .d {
-  background-color: #ccffcc;
+  background-color: #99ff99;
 }
 .p {
-  background-color: #ffccff;
+  background-color: #ffccd8;
 }
 .f {
-  background-color: #ffccff;
+  background-color: #e599ff;
 }
 .nin {
   background-color: #ffddcc;
