@@ -1,43 +1,24 @@
 <template>
-  <div id="csvSelect">
-    <FileSelector @fileContentChange="updateFileContent" />
-  </div>
-  <div id="generateOptions">
-    年度を選択
-    <select id="year" v-model="selected">
-      <option value="all" selected>全て</option>
-      <option v-for="year in lastFourYears" :key="year" :value="year">
-        {{ year }}
-      </option>
-    </select>
-    <label for="includeCurriculumToGraph"
-      >グラフに教職を含める
-      <input
-        type="checkbox"
-        id="includeCurriculumToGraph"
-        v-model="includeCurriculumToGPA"
-      />
-    </label>
-    <br />
-    <label for="includeCurriculumToGPA"
-      >GPA計算に教職を含める
-      <input
-        type="checkbox"
-        id="includeCurriculumToGPA"
-        v-model="includeCurriculumToGraph"
-      />
-    </label>
-  </div>
-  <div>
-    <div>
-      <div v-if="fileContent">
-        {{ store.commit("setCourses", parseCSV(fileContent)) }}
-        {{ store.commit("setYear", selected) }}
-        <GradeTable />
-        <GPASection />
-      </div>
-      <p v-else>ファイルを選択してください</p>
+  <h1>成績グラフ表示</h1>
+  <div v-if="!isFileUploaded">
+    <div id="csvSelect">
+      <FileSelector @file-content-change="updateFileContent" />
     </div>
+
+    <div id="generateOptions">
+      年度を選択
+      <SelectYear @change-option="updateYearOption" />
+      <CheckBoxes @change-option="updateCheckbox" />
+    </div>
+    <div>
+      <p>ファイルを選択してください</p>
+    </div>
+    <HelpNote />
+  </div>
+  <div v-else>
+    <GradeTable />
+    <GPASection />
+    <DeleteButton @button-click="deleteFile" />
   </div>
 </template>
 
@@ -45,36 +26,70 @@
 import { defineComponent, ref } from "vue";
 import { store } from "./store/index";
 
-import FileSelector from "./components/FileSelector.vue";
-import GPASection from "./components/GPASection.vue";
-import GradeTable from "./components/GradeTable.vue";
+import FileSelector from "./components/preUpload/FileSelector.vue";
+import SelectYear from "./components/preUpload/SelectYear.vue";
+import CheckBoxes from "./components/preUpload/CheckBoxes.vue";
+import GPASection from "./components/postUpload/GPASection.vue";
+import GradeTable from "./components/postUpload/GradeTable.vue";
 import parseCSV from "./components/units/parseCSV";
+import HelpNote from "./components/preUpload/HelpNote.vue";
+import DeleteButton from "./components/postUpload/DeleteButton.vue";
 
 export default defineComponent({
   name: "App",
-  components: { FileSelector, GPASection, GradeTable },
+  components: {
+    FileSelector,
+    SelectYear,
+    CheckBoxes,
+    GPASection,
+    GradeTable,
+    HelpNote,
+    DeleteButton,
+  },
 
   setup() {
-    const currentYear = new Date().getFullYear();
-    const lastFourYears = Array.from(
-      { length: 4 },
-      (_, i) => currentYear - i
-    ).map((year) => year.toString());
     const fileContent = ref<string | null>(null);
     const selected = ref("all");
+    const isFileUploaded = ref(false);
     const includeCurriculumToGraph = ref(true);
     const includeCurriculumToGPA = ref(true);
 
     const updateFileContent = (content: string) => {
+      isFileUploaded.value = true;
       fileContent.value = content;
+      store.commit("setCourses", parseCSV(content));
+    };
+
+    const updateYearOption = (selectedOption: string) => {
+      selected.value = selectedOption;
+      store.commit("setYear", selectedOption);
+    };
+
+    type CheckboxOption = "graph" | "gpa";
+    const updateCheckbox = (value: boolean, option: CheckboxOption) => {
+      if (option === "graph") {
+        includeCurriculumToGraph.value = value;
+      } else if (option === "gpa") {
+        includeCurriculumToGPA.value = value;
+      }
+    };
+
+    const deleteFile = () => {
+      isFileUploaded.value = false;
+      fileContent.value = null;
+      store.commit("setCourses", []);
+      store.commit("setYear", "all");
     };
 
     return {
       selected,
       includeCurriculumToGraph,
       includeCurriculumToGPA,
-      lastFourYears,
+      updateYearOption,
+      updateCheckbox,
+      isFileUploaded,
       fileContent,
+      deleteFile,
       parseCSV,
       updateFileContent,
       store,

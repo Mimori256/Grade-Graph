@@ -2,8 +2,8 @@
 import { defineComponent } from "vue";
 import { store } from "@/store/index";
 
-import Course from "./types/Course";
-import sortCourses from "./units/sortCourses";
+import Course from "../types/Course";
+import sortCourses from "../units/sortCourses";
 
 import "@/components/styles/globals.css";
 
@@ -34,19 +34,24 @@ export default defineComponent({
       return gradeClassNamesMap[grade];
     };
 
+    const isYearAll = (year: string) => {
+      return year == "all";
+    };
+
     courses = sortCourses(courses);
 
-    return { courses, year, getGradeClassName };
+    return { courses, year, getGradeClassName, isYearAll };
   },
 });
 </script>
 <template>
-  <h1>成績一覧</h1>
+  <h2>成績一覧</h2>
   <table id="grade-table">
     <tr>
       <th class="left">科目名</th>
       <th>単位数</th>
       <th>成績</th>
+      <th v-if="isYearAll(year)">履修年度</th>
     </tr>
     <tr
       v-for="course in courses"
@@ -56,8 +61,12 @@ export default defineComponent({
       <td class="left">{{ course.name }}</td>
       <td>{{ course.units }}</td>
       <td>{{ course.grade }}</td>
+      <td v-if="isYearAll(year)">
+        {{ course.registrationYear }}
+      </td>
     </tr>
   </table>
+  <div id="unit-sum"></div>
 </template>
 
 <style>
@@ -68,6 +77,4 @@ export default defineComponent({
 .left {
   text-align: left;
 }
-
-@import "./styles/globals.css";
 </style>

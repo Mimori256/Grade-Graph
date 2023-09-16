@@ -14,7 +14,8 @@ export default defineComponent({
       if (selectedFile) {
         const reader = new FileReader();
         reader.onload = (e) => {
-          emit("fileContentChange", e.target?.result as string);
+          console.log("emit");
+          emit("file-content-change", e.target?.result as string);
         };
         reader.readAsText(selectedFile);
       }
@@ -39,5 +40,10 @@ export default defineComponent({
       />
     </label>
   </div>
-  <p>test</p>
 </template>
+
+<style>
+div {
+  text-align: center;
+}
+</style>
