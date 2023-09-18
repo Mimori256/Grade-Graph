@@ -3,6 +3,7 @@ import { defineComponent } from "vue";
 import { GChart } from "vue-google-charts";
 import { store } from "@/store/index";
 import { createChartData } from "@/components/units/createChartData";
+import { gradeColor } from "../consts/index";
 
 export default defineComponent({
   components: {
@@ -13,8 +14,15 @@ export default defineComponent({
     const year = store.state.year;
     const data = createChartData(courses, year);
     const options = {
-      chart: {
-        title: "成績分布",
+      colors: gradeColor,
+      backgroundColor: "#eeeeee",
+      pieSliceText: "none",
+      chartArea: {
+        width: "100%",
+        height: "80%",
+      },
+      legend: {
+        position: "bottom",
       },
     };
     console.log(data);

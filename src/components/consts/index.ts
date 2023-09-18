@@ -1,12 +1,12 @@
 export const gradeOrder = ["A+", "A", "B", "C", "D", "P", "F", "認", "履修中"];
 export const gradeColor = [
-  "#FF9999",
-  "#FFCC99",
-  "#99CCFF",
-  "#FFFF99",
-  "#99FF99",
-  "#FFCCD8",
-  "#E599FF",
+  "#ff9999",
+  "#ffcc99",
+  "#99ccff",
+  "#ffff99",
+  "#99ff99",
+  "#ffccd8",
+  "#e599ff",
   "#ffddcc",
-  "#CCCCCC",
+  "#cccccc",
 ];

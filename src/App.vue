@@ -21,6 +21,7 @@
     <GradeGraph />
     <DeleteButton @button-click="deleteFile" />
   </div>
+  <BottomFooter />
 </template>
 
 <script lang="ts">
@@ -36,6 +37,7 @@ import parseCSV from "./components/units/parseCSV";
 import HelpNote from "./components/preUpload/HelpNote.vue";
 import DeleteButton from "./components/postUpload/DeleteButton.vue";
 import GradeGraph from "./components/postUpload/GradeGraph.vue";
+import BottomFooter from "./components/preUpload/BottomFooter.vue";
 export default defineComponent({
   name: "App",
   components: {
@@ -47,6 +49,7 @@ export default defineComponent({
     HelpNote,
     DeleteButton,
     GradeGraph,
+    BottomFooter,
   },
 
   setup() {

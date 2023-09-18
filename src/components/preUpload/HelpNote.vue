@@ -26,6 +26,18 @@ export default defineComponent({
       <p>使用したCSVファイルが外部に保存されることはありません</p>
     </div>
   </div>
+  <div id="updte-notice">
+    <p>
+      現在<a
+        href="https://github.com/Mimori256/Grade-Graph-Old"
+        target="_blank"
+        rel="noreferrer"
+        >旧版のGrade-Graph</a
+      >から、Vue.jsを使って作り直しています
+    </p>
+    <p>現在更新を進めているため、一部実装されていない機能があります</p>
+    <p>旧版を使いたい場合は、上のリンクからアクセスしてください</p>
+  </div>
 </template>
 
 <style>
