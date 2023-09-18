@@ -1,5 +1,5 @@
 <template>
-  <h1>成績グラフ表示</h1>
+  <h1>成績表示</h1>
   <div v-if="!isFileUploaded">
     <div id="csvSelect">
       <FileSelector @file-content-change="updateFileContent" />
