@@ -16,7 +16,6 @@
     "vue-google-charts": "^1.1.0",
     "vuex": "^4.1.0"
   },
-  "homepage": "./",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
