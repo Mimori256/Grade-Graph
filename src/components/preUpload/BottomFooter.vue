@@ -1,6 +1,10 @@
 <script lang="ts">
 import { defineComponent } from "vue";
+import ExternalLink from "../units/ExternalLink.vue";
 export default defineComponent({
+  components: {
+    ExternalLink,
+  },
   setup() {
     return {};
   },
@@ -12,18 +16,14 @@ export default defineComponent({
     <hr />
     <p>
       Source code is availabe on
-      <a
-        href="https://github.com/Mimori256/Grade-Graph"
-        target="_blank"
-        rel="noreferrer"
-        >GitHub</a
-      >
+      <ExternalLink
+        url="https://github.com/Mimori256/Grade-Graph"
+        content="GitHub"
+      />
     </p>
     <p>
       Contributed by:
-      <a href="https://github.com/Mimori256" target="_blank" rel="noreferrer"
-        >Mimori256</a
-      >
+      <ExternalLink url="https://github.com/Mimori256" content="Mimori256" />
     </p>
   </footer>
 </template>

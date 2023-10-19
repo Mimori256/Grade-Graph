@@ -1,9 +1,20 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
+import HelpPopup from "./HelpPopup.vue";
+import ExternalLink from "../units/ExternalLink.vue";
 
 export default defineComponent({
+  components: {
+    ExternalLink,
+    HelpPopup,
+  },
   setup() {
-    return {};
+    const isPopupOpen = ref(false);
+
+    const togglePopup = () => {
+      isPopupOpen.value = !isPopupOpen.value;
+    };
+    return { isPopupOpen, togglePopup };
   },
 });
 </script>
@@ -14,10 +25,12 @@ export default defineComponent({
     <p>
       TWINSの成績から、成績のCSVファイルをダウンロードして、そのファイルを選択してください
     </p>
+    <p @click="togglePopup" class="openPopupButton">具体的な使い方を表示</p>
+    <HelpPopup v-show="isPopupOpen" @close-popup="togglePopup" />
   </div>
   <div id="note">
     <h1>注意</h1>
-    <div id="warnings">
+    <div class="warnings">
       <p>このページで算出されるGPAは、対象外を考慮していません</p>
       <p>このページは有志の学生によって作成されています。</p>
       <p>
@@ -28,12 +41,11 @@ export default defineComponent({
   </div>
   <div id="updte-notice">
     <p>
-      現在<a
-        href="https://github.com/Mimori256/Grade-Graph-Old"
-        target="_blank"
-        rel="noreferrer"
-        >旧版のGrade-Graph</a
-      >から、Vue.jsを使って作り直しています
+      <ExternalLink
+        url="https://github.com/Mimori256/Grade-Graph-Old"
+        content="旧版のGrade-Graph"
+      />
+      から、Vue.jsを使って作り直しています
     </p>
     <p>現在更新を進めているため、一部実装されていない機能があります</p>
     <p>旧版を使いたい場合は、上のリンクからアクセスしてください</p>
@@ -41,7 +53,16 @@ export default defineComponent({
 </template>
 
 <style>
-#warnings {
+.warnings {
   color: crimson;
+}
+
+.openPopupButton {
+  color: blue;
+  cursor: pointer;
+}
+
+.openPopupButton:hover {
+  text-decoration: underline;
 }
 </style>

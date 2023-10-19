@@ -5,10 +5,17 @@ export default defineComponent({
   emits: ["change-option"],
   setup() {
     const currentYear = new Date().getFullYear();
-    const lastFourYears = Array.from(
-      { length: 4 },
-      (_, i) => currentYear - i
-    ).map((year) => year.toString());
+    const currentMonth = new Date().getMonth() + 1;
+    let nendo: number;
+
+    if (currentMonth < 4) {
+      nendo = currentYear - 1;
+    } else {
+      nendo = currentYear;
+    }
+    const lastFourYears = Array.from({ length: 4 }, (_, i) => nendo - i).map(
+      (year) => year.toString()
+    );
     const selectedOption = ref("all");
 
     return {
