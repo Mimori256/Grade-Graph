@@ -25,7 +25,9 @@ export default defineComponent({
     <p>
       TWINSの成績から、成績のCSVファイルをダウンロードして、そのファイルを選択してください
     </p>
-    <p @click="togglePopup" class="openPopupButton">具体的な使い方を表示</p>
+    <p @click="togglePopup" class="openPopupButton">
+      ファイルのダウンロード方法を表示
+    </p>
     <HelpPopup v-show="isPopupOpen" @close-popup="togglePopup" />
   </div>
   <div id="note">
