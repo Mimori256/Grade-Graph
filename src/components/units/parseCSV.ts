@@ -1,5 +1,7 @@
 import Course from "../types/Course";
 import grade from "../types/Grade";
+import { courseSchema } from "@/schema/schema";
+
 // The colums of the CSV file
 // "学籍番号","学生氏名","科目番号","科目名 ","単位数","春学期","秋学期","総合評価","科目区分","開講年度","開講区分"
 
@@ -30,6 +32,14 @@ const parseCSV = (csv: string): Course[] => {
       units: Number(units),
       grade: courseGrade,
     };
+
+    // Validate the course object
+    try {
+      courseSchema.parse(course);
+    } catch (error) {
+      console.log(error);
+    }
+
     courses.push(course);
   });
   return courses;

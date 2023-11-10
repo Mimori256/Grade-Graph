@@ -64,7 +64,6 @@ export default defineComponent({
       isFileUploaded.value = true;
       fileContent.value = content;
       const parsedCSV = parseCSV(content);
-      console.log(parsedCSV);
       store.commit("setCourses", parsedCSV);
     };
 
