@@ -25,7 +25,6 @@ export default defineComponent({
         position: "bottom",
       },
     };
-    console.log(data);
     return { data, options };
   },
 });

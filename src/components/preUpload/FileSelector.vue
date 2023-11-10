@@ -44,5 +44,6 @@ export default defineComponent({
 <style>
 div {
   text-align: center;
+  margin-bottom: 2%;
 }
 </style>

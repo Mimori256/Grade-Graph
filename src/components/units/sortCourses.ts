@@ -8,7 +8,6 @@ const sortCourses = (courses: Course[]): Course[] => {
   const sortedCourses = courses.sort((a, b) => {
     return grades.indexOf(a.grade) - grades.indexOf(b.grade);
   });
-  console.log(sortedCourses);
   return sortedCourses;
 };
 

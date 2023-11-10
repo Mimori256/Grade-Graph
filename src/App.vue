@@ -16,6 +16,7 @@
     <HelpNote />
   </div>
   <div v-else>
+    <p>戻るためには、ページ下のボタンをクリックしてください</p>
     <GradeTable />
     <GPASection />
     <GradeGraph />
@@ -62,7 +63,9 @@ export default defineComponent({
     const updateFileContent = (content: string) => {
       isFileUploaded.value = true;
       fileContent.value = content;
-      store.commit("setCourses", parseCSV(content));
+      const parsedCSV = parseCSV(content);
+      console.log(parsedCSV);
+      store.commit("setCourses", parsedCSV);
     };
 
     const updateYearOption = (selectedOption: string) => {
