@@ -18,8 +18,8 @@
   <div v-else>
     <p>戻るためには、ページ下のボタンをクリックしてください</p>
     <GradeTable />
-    <GPASection />
-    <GradeGraph />
+    <GPASection :isTeacherCurriculumIncluded="includeCurriculumToGPA" />
+    <GradeGraph :isTeacherCurriculumIncluded="includeCurriculumToGraph" />
     <DeleteButton @button-click="deleteFile" />
   </div>
   <BottomFooter />

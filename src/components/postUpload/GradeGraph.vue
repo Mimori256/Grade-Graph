@@ -9,8 +9,18 @@ export default defineComponent({
   components: {
     GChart,
   },
-  setup() {
-    const courses = store.state.courses;
+  props: {
+    isTeacherCurriculumIncluded: {
+      type: Boolean,
+      required: true,
+    },
+  },
+  setup(props) {
+    let courses = store.state.courses;
+    if (!props.isTeacherCurriculumIncluded) {
+      courses = courses.filter((course) => course.courseType !== "D");
+    }
+
     const year = store.state.year;
     const data = createChartData(courses, year);
     const options = {

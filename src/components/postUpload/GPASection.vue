@@ -3,10 +3,19 @@ import { countUnits, calculateGPA } from "../units/caluculateGPA";
 import { defineComponent } from "vue";
 import { store } from "@/store/index";
 
-// Props has the array of Course
 export default defineComponent({
-  setup() {
-    const GPA = calculateGPA(store.state.courses, store.state.year);
+  props: {
+    isTeacherCurriculumIncluded: {
+      type: Boolean,
+      required: true,
+    },
+  },
+  setup(props) {
+    const GPA = calculateGPA(
+      store.state.courses,
+      store.state.year,
+      props.isTeacherCurriculumIncluded
+    );
     const [registeredUnits, acquiredUnits]: number[] = countUnits(
       store.state.courses,
       store.state.year
