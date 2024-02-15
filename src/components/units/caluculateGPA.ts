@@ -23,12 +23,12 @@ export const countUnits = (allCourses: Course[], year: string) => {
 	let totalUnits = 0;
 	let totalAcquiredUnits = 0;
 
-	courses.forEach((course) => {
+	for (const course of courses) {
 		totalUnits += course.units;
 		if (isCountedToGPA(course)) {
 			totalAcquiredUnits += course.units;
 		}
-	});
+	}
 
 	return [totalUnits, totalAcquiredUnits];
 };
