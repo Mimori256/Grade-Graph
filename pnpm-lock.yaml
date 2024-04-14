@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@types/google.visualization':
-    specifier: ^0.0.73
-    version: 0.0.73
+    specifier: ^0.0.74
+    version: 0.0.74
   core-js:
     specifier: ^3.8.3
     version: 3.36.1
@@ -1562,8 +1562,8 @@ packages:
       '@types/serve-static': 1.15.7
     dev: true
 
-  /@types/google.visualization@0.0.73:
-    resolution: {integrity: sha512-ACEjWFeNJVrV5DUvhODYDQwvWk5wzlqyACy3i+WPMx0v+9ysIYWGVe2uTLVFzpjxy5zA4iF4GrHd9SGtrf+H2A==}
+  /@types/google.visualization@0.0.74:
+    resolution: {integrity: sha512-vcBDi9AF7bPGf7v+WvTUUyuF7KT/kdnOg0qyI8UsQtEuW8dYQcQTG3atejfy8Vwb9bzpa42IE80d9571QXy8jg==}
     dev: false
 
   /@types/html-minifier-terser@6.1.0:
