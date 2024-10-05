@@ -21,6 +21,11 @@ export default defineComponent({
 <style scoped>
 a,
 a:visited {
-  color: blue;
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #357abd;
 }
 </style>

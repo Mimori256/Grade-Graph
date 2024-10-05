@@ -41,5 +41,10 @@ export default defineComponent({
 </script>
 
 <template>
-  <GChart type="PieChart" :data="data" :options="options" />
+  <GChart
+    type="PieChart"
+    :data="data"
+    :options="options"
+    style="width: 100%; height: 400px"
+  />
 </template>
