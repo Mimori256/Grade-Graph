@@ -22,11 +22,15 @@ export default defineComponent({
       <p>
         成績ページ下部のダウンロードボタンをクリック(表示件数を変更する必要はありません)
       </p>
-      <img src="@/assets/img/download.png" class="popup-image" alt="download" />
+      <img
+        src="@/assets/img/download.webp"
+        class="popup-image"
+        alt="download"
+      />
       <p>
         その後表示される、出力をクリック(ファイル形式、文字コードは変更しないでください)
       </p>
-      <img src="@/assets/img/confirm.png" class="popup-image" alt="confirm" />
+      <img src="@/assets/img/confirm.webp" class="popup-image" alt="confirm" />
       <p>これで成績ファイルをダウンロードすることができます</p>
       <p><button @click="$emit('close-popup')">閉じる</button></p>
     </div>
