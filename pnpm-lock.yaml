@@ -26,8 +26,8 @@ dependencies:
 
 devDependencies:
   '@types/google.visualization':
-    specifier: ^0.0.73
-    version: 0.0.73
+    specifier: ^0.0.74
+    version: 0.0.74
   '@vitejs/plugin-vue':
     specifier: ^5.1.4
     version: 5.1.4(vite@5.4.8)(vue@3.4.21)
@@ -405,8 +405,8 @@ packages:
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
     dev: true
 
-  /@types/google.visualization@0.0.73:
-    resolution: {integrity: sha512-ACEjWFeNJVrV5DUvhODYDQwvWk5wzlqyACy3i+WPMx0v+9ysIYWGVe2uTLVFzpjxy5zA4iF4GrHd9SGtrf+H2A==}
+  /@types/google.visualization@0.0.74:
+    resolution: {integrity: sha512-vcBDi9AF7bPGf7v+WvTUUyuF7KT/kdnOg0qyI8UsQtEuW8dYQcQTG3atejfy8Vwb9bzpa42IE80d9571QXy8jg==}
     dev: true
 
   /@vitejs/plugin-vue@5.1.4(vite@5.4.8)(vue@3.4.21):
