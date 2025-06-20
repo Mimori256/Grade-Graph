@@ -13,7 +13,7 @@ dependencies:
     version: 6.1.1
   vue:
     specifier: ^3.2.13
-    version: 3.5.17(typescript@5.8.2)
+    version: 3.5.17(typescript@5.8.3)
   vue-google-charts:
     specifier: ^1.1.0
     version: 1.1.0(vue@3.5.17)
@@ -33,7 +33,7 @@ devDependencies:
     version: 5.2.4(vite@5.4.19)(vue@3.5.17)
   typescript:
     specifier: ~5.8.0
-    version: 5.8.2
+    version: 5.8.3
   vite:
     specifier: ^5.4.8
     version: 5.4.19
@@ -448,7 +448,7 @@ packages:
       vue: ^3.2.25
     dependencies:
       vite: 5.4.19
-      vue: 3.5.17(typescript@5.8.2)
+      vue: 3.5.17(typescript@5.8.3)
     dev: true
 
   /@vue/compiler-core@3.5.17:
@@ -515,7 +515,7 @@ packages:
     dependencies:
       '@vue/compiler-ssr': 3.5.17
       '@vue/shared': 3.5.17
-      vue: 3.5.17(typescript@5.8.2)
+      vue: 3.5.17(typescript@5.8.3)
 
   /@vue/shared@3.5.17:
     resolution: {integrity: sha512-CabR+UN630VnsJO/jHWYBC1YVXyMq94KKp6iF5MQgZJs5I8cmjw6oVMO1oDbtBkENSHSSn/UadWlW/OAgdmKrg==}
@@ -893,8 +893,8 @@ packages:
       escape-string-regexp: 1.0.5
     dev: false
 
-  /typescript@5.8.2:
-    resolution: {integrity: sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==}
+  /typescript@5.8.3:
+    resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -946,10 +946,10 @@ packages:
     peerDependencies:
       vue: ^3.0.0-0 || ^2.6.0
     dependencies:
-      vue: 3.5.17(typescript@5.8.2)
+      vue: 3.5.17(typescript@5.8.3)
     dev: false
 
-  /vue@3.5.17(typescript@5.8.2):
+  /vue@3.5.17(typescript@5.8.3):
     resolution: {integrity: sha512-LbHV3xPN9BeljML+Xctq4lbz2lVHCR6DtbpTf5XIO6gugpXUN49j2QQPcMj086r9+AkJ0FfUT8xjulKKBkkr9g==}
     peerDependencies:
       typescript: '*'
@@ -962,7 +962,7 @@ packages:
       '@vue/runtime-dom': 3.5.17
       '@vue/server-renderer': 3.5.17(vue@3.5.17)
       '@vue/shared': 3.5.17
-      typescript: 5.8.2
+      typescript: 5.8.3
 
   /vuex@4.1.0(vue@3.5.17):
     resolution: {integrity: sha512-hmV6UerDrPcgbSy9ORAtNXDr9M4wlNP4pEFKye4ujJF8oqgFFuxDCdOLS3eNoRTtq5O3hoBDh9Doj1bQMYHRbQ==}
@@ -970,7 +970,7 @@ packages:
       vue: ^3.2.0
     dependencies:
       '@vue/devtools-api': 6.6.1
-      vue: 3.5.17(typescript@5.8.2)
+      vue: 3.5.17(typescript@5.8.3)
     dev: false
 
   /wrappy@1.0.2:
