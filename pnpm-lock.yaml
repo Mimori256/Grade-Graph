@@ -31,8 +31,8 @@ importers:
         specifier: 2.3.7
         version: 2.3.7
       '@types/google.visualization':
-        specifier: ^0.0.73
-        version: 0.0.73
+        specifier: ^0.0.74
+        version: 0.0.74
       '@vitejs/plugin-vue':
         specifier: ^5.1.4
         version: 5.2.4(vite@7.1.12)(vue@3.5.22(typescript@5.9.3))
@@ -399,8 +399,8 @@ packages:
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
 
-  '@types/google.visualization@0.0.73':
-    resolution: {integrity: sha512-ACEjWFeNJVrV5DUvhODYDQwvWk5wzlqyACy3i+WPMx0v+9ysIYWGVe2uTLVFzpjxy5zA4iF4GrHd9SGtrf+H2A==}
+  '@types/google.visualization@0.0.74':
+    resolution: {integrity: sha512-vcBDi9AF7bPGf7v+WvTUUyuF7KT/kdnOg0qyI8UsQtEuW8dYQcQTG3atejfy8Vwb9bzpa42IE80d9571QXy8jg==}
 
   '@vitejs/plugin-vue@5.2.4':
     resolution: {integrity: sha512-7Yx/SXSOcQq5HiiV3orevHUFn+pmMB4cgbEkDYgnkUWb0WfeQ/wa2yFv6D5ICiCQOVpjA7vYDXrC7AGO8yjDHA==}
@@ -954,7 +954,7 @@ snapshots:
 
   '@types/estree@1.0.8': {}
 
-  '@types/google.visualization@0.0.73': {}
+  '@types/google.visualization@0.0.74': {}
 
   '@vitejs/plugin-vue@5.2.4(vite@7.1.12)(vue@3.5.22(typescript@5.9.3))':
     dependencies:
